@@ -10,12 +10,6 @@ interface MainContract {
         fun showMemoOrderByTitle(asc : Boolean = true, bookMark: Boolean = true)
     }
 
-    interface Model {
-        //로컬에서 불러온 메모 정보담기
-        fun setAllMemo(memoList : List<MemoInfo>)
-        //특정 메모 정보를 키 정보로 불러오기
-        fun getMemoInfo(key: Int) : MemoInfo
-    }
 
     interface Presenter {
         //Local 저장소에서 메모 정보 불러오기
