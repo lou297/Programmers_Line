@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    //MainActivity 상단 구역
+    <dimen name="main_upper_area_size">180dp</dimen>
+
+    //BaseMemoActivity 상단 바
+    <dimen name="base_memo_toolbar_size">50dp</dimen>
+    //BaseMemoActivity 카테고리 사이즈
+    <dimen name="base_memo_category_size">30dp</dimen>
+    //BaseMemoActivity 메모 내용 구역 최소 사이즈
+    <dimen name="base_memo_contents_min_height">150dp</dimen>
+
+    //BaseMemoAcitity 이미지 목록 구역 사이즈
+    <dimen name="base_memo_image_area_size">130dp</dimen>
+
+</resources>
