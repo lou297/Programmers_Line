@@ -1,4 +1,6 @@
 package com.pingpong.memoadd.baseMemo.readMemo
 
-class readMemoFragment {
+import androidx.fragment.app.Fragment
+
+public class readMemoFragment : Fragment() {
 }

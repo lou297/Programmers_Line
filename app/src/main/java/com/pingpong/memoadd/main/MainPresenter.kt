@@ -1,9 +1,12 @@
 package com.pingpong.memoadd.main
 
-import android.content.Context
-import com.pingpong.memoadd.MemoInfo
+import com.pingpong.memoadd.data.MemoInfo
 
-class MainPresenter(private val view : MainContract.View, private val context : Context) : MainContract.Presenter {
+class MainPresenter() : MainContract.Presenter {
+
+    lateinit override var view: MainContract.View
+
+
     override fun loadMemoFromLocal() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
@@ -12,11 +15,11 @@ class MainPresenter(private val view : MainContract.View, private val context : 
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun goToMemoDetail(memoInfo: MemoInfo) {
+    override fun onClickMemoItem(memoInfo: MemoInfo) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun goToMemoWrite() {
+    override fun onClickWriteFab() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 

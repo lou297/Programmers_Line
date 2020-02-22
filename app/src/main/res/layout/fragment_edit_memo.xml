@@ -11,6 +11,7 @@
 
         <Button
             android:id="@+id/btn_exit_memo"
+            android:text="back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -19,6 +20,7 @@
 
         <Button
             android:id="@+id/btn_attach_image"
+            android:text="image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
@@ -27,6 +29,7 @@
 
         <Button
             android:id="@+id/btn_save_memo"
+            android:text="save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
