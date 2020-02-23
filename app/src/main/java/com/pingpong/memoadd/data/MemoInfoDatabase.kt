@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 
 @Database(entities = [MemoInfo::class], version = 1)
 
-public abstract class MemoInfoDB : RoomDatabase() {
+abstract class MemoInfoDB : RoomDatabase() {
     abstract fun getMemoInfoDao() : MemoInfoDao
 
     companion object {

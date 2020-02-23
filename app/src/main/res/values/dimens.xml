@@ -15,4 +15,7 @@
     //BaseMemoAcitity 이미지 목록 구역 사이즈
     <dimen name="base_memo_image_area_size">130dp</dimen>
 
+    //MemoList
+    <dimen name="item_memo_height">150dp</dimen>
+
 </resources>
