@@ -1,6 +1,7 @@
 package com.pingpong.memoadd.baseMemo.editMemo
 
 import com.pingpong.memoadd.data.MemoInfo
+import com.pingpong.memoadd.data.MemoInfoDao
 
 class editMemoPresenter() : editMemoContract.Presenter {
 
@@ -14,6 +15,16 @@ class editMemoPresenter() : editMemoContract.Presenter {
             MemoInfo(0, title, contents, 0, null)
 
         return memoInfo
+    }
+
+    override fun addMemo(memoInfoDao: MemoInfoDao, memoInfo: MemoInfo) {
+        val r = Runnable {
+            memoInfoDao.insert(memoInfo)
+        }
+
+        val thread = Thread(r)
+
+        thread.start()
     }
 
 }

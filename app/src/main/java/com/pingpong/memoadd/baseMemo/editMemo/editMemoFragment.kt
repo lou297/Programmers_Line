@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.pingpong.memoadd.R
+import com.pingpong.memoadd.data.MemoInfo
+import com.pingpong.memoadd.data.MemoInfoDB
 import kotlinx.android.synthetic.main.fragment_edit_memo.*
 import kotlinx.android.synthetic.main.fragment_edit_memo.btn_exit_memo
 import kotlinx.android.synthetic.main.fragment_edit_memo.view.*
@@ -47,7 +49,13 @@ public class editMemoFragment() : Fragment(), editMemoContract.View {
         if(contents!!.length == 0)
             contents = null
 
-        presenter.checkMemo(title, contents)
+        var memo : MemoInfo? = null
+        if(!(title == null && contents == null))
+            memo = presenter.checkMemo(title, contents)
+
+        if(memo != null)
+            presenter.addMemo(MemoInfoDB.getInstance(context!!)!!.getMemoInfoDao(), memo)
+
 
     }
 }

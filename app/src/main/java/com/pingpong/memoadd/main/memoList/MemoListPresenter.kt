@@ -6,12 +6,9 @@ import com.pingpong.memoadd.main.memoList.MemoListContract
 
 class MemoListPresenter : MemoListContract.Presenter{
 
-//    override val memoList: ArrayList<MemoInfo> = ArrayList<MemoInfo>()
-
-    override val memoList: ArrayList<MemoInfo> = arrayListOf(MemoInfo(1,"zzzz","zzzzz",0, null))
+    override val memoList: ArrayList<MemoInfo> = ArrayList<MemoInfo>()
 
     override fun onBindViewApPosition(position : Int, holder : MemoListAdapter.MemoViewHolder) {
-        Log.d("test2", "position : " + position)
         val memo : MemoInfo = memoList.get(position)
 
         val title = memo.title
@@ -23,6 +20,11 @@ class MemoListPresenter : MemoListContract.Presenter{
 
         if(contents != null)
             holder.setContents(contents)
+    }
+
+    override fun addMemos(memos: List<MemoInfo>) {
+        for(memo in memoList)
+            memoList.add(memo)
     }
 
     override fun addMemo(memo: MemoInfo) {

@@ -18,6 +18,8 @@ interface MemoListContract {
 
         fun onBindViewApPosition(position : Int, holder : MemoListAdapter.MemoViewHolder)
 
+        fun addMemos(memos: List<MemoInfo>)
+
         fun addMemo(memo : MemoInfo)
     }
 }

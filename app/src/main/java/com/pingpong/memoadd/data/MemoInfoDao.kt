@@ -1,12 +1,10 @@
 package com.pingpong.memoadd.data
 
-import androidx.room.Delete
-import androidx.room.Insert
+import androidx.room.*
 import androidx.room.OnConflictStrategy.REPLACE
-import androidx.room.Query
-import androidx.room.Update
 import com.pingpong.memoadd.data.MemoInfo
 
+@Dao
 interface MemoInfoDao {
 
     @Query("SELECT * FROM memo")

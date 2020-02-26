@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.pingpong.memoadd.data.MemoInfo
 import com.pingpong.memoadd.R
 import com.pingpong.memoadd.baseMemo.BaseMemoActivity
@@ -15,6 +16,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity(),  MainContract.View {
 
     private lateinit var presenter: MainPresenter
+
+    private val adapter = MemoListAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,10 +32,11 @@ class MainActivity : AppCompatActivity(),  MainContract.View {
             view = this@MainActivity
         }
 
-        val adapter = MemoListAdapter()
+        rv_memo_list.layoutManager = LinearLayoutManager(this)
         rv_memo_list.adapter = adapter
-//        Log.d("test", "size : " + adapter.itemCount)
         adapter.notifyDataSetChanged()
+        Log.d("test", "zzzz")
+        presenter.loadMemoFromLocal(this)
 
         fab_write_memo.setOnClickListener {
             val intent = Intent(this, BaseMemoActivity::class.java)
@@ -40,8 +44,9 @@ class MainActivity : AppCompatActivity(),  MainContract.View {
         }
     }
 
-    override fun updateMemos(memoList: List<MemoInfo>) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun updateMemos(memos: List<MemoInfo>) {
+        adapter.addMemos(memos)
+        adapter.notifyDataSetChanged()
     }
 
     override fun showToast(contents: String) {
