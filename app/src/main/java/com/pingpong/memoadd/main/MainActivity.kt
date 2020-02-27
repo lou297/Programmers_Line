@@ -6,9 +6,11 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.pingpong.memoadd.data.MemoInfo
 import com.pingpong.memoadd.R
 import com.pingpong.memoadd.baseMemo.BaseMemoActivity
+import com.pingpong.memoadd.data.MemoInfoDB
 import com.pingpong.memoadd.main.memoList.MemoListAdapter
 import com.pingpong.memoadd.main.memoList.MemoListPresenter
 import kotlinx.android.synthetic.main.activity_main.*
@@ -32,11 +34,12 @@ class MainActivity : AppCompatActivity(),  MainContract.View {
             view = this@MainActivity
         }
 
-        rv_memo_list.layoutManager = LinearLayoutManager(this)
+        rv_memo_list.layoutManager = LinearLayoutManager(this) as RecyclerView.LayoutManager?
         rv_memo_list.adapter = adapter
         adapter.notifyDataSetChanged()
         Log.d("test", "zzzz")
-        presenter.loadMemoFromLocal(this)
+        var memoDb = MemoInfoDB.getInstance(this)
+//        presenter.loadMemoFromLocal(this)
 
         fab_write_memo.setOnClickListener {
             val intent = Intent(this, BaseMemoActivity::class.java)
@@ -44,13 +47,13 @@ class MainActivity : AppCompatActivity(),  MainContract.View {
         }
     }
 
-    override fun updateMemos(memos: List<MemoInfo>) {
-        adapter.addMemos(memos)
+    override fun updateMemos(memoList: List<MemoInfo>) {
+        adapter.addMemos(memoList)
         adapter.notifyDataSetChanged()
     }
 
     override fun showToast(contents: String) {
-        Toast.makeText(this, contents, Toast.LENGTH_LONG)
+        Toast.makeText(this, contents, Toast.LENGTH_LONG).show()
     }
 
 
