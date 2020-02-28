@@ -6,7 +6,6 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 @Database(entities = [MemoInfo::class], version = 1)
-
 abstract class MemoInfoDB : RoomDatabase() {
     abstract fun getMemoInfoDao() : MemoInfoDao
 
@@ -22,8 +21,11 @@ abstract class MemoInfoDB : RoomDatabase() {
                         .build()
                 }
             }
-
             return instance
+        }
+
+        fun destroyInstance() {
+            instance = null
         }
 
     }

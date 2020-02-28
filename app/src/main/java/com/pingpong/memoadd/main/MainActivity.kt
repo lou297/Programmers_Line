@@ -37,9 +37,7 @@ class MainActivity : AppCompatActivity(),  MainContract.View {
         rv_memo_list.layoutManager = LinearLayoutManager(this) as RecyclerView.LayoutManager?
         rv_memo_list.adapter = adapter
         adapter.notifyDataSetChanged()
-        Log.d("test", "zzzz")
-        var memoDb = MemoInfoDB.getInstance(this)
-//        presenter.loadMemoFromLocal(this)
+        presenter.loadMemoFromLocal(this)
 
         fab_write_memo.setOnClickListener {
             val intent = Intent(this, BaseMemoActivity::class.java)

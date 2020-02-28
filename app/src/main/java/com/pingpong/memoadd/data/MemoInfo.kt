@@ -8,8 +8,8 @@ import androidx.room.PrimaryKey
 class MemoInfo(@PrimaryKey (autoGenerate = true) val id : Int,
                @ColumnInfo(name = "title") var title : String?,
                @ColumnInfo(name = "contents") var contents : String?,
-               @ColumnInfo(name = "imageNum") var imageNum : Int,
-               @ColumnInfo(name = "firstImagePath") var firstImagePath : String?)
+               @ColumnInfo(name = "image_num") var imageNum : Int,
+               @ColumnInfo(name = "first_image_path") var firstImagePath : String?)
 
 /*
  key : DB indexing을 위한 key

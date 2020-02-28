@@ -8,15 +8,15 @@ import com.pingpong.memoadd.data.MemoInfo
 interface MemoInfoDao {
 
     @Query("SELECT * FROM memo")
-    fun getAll() : List<MemoInfo>
+    fun getAllMemos() : List<MemoInfo>
 
     @Insert(onConflict = REPLACE)
-    fun insert(memoInfo : MemoInfo)
+    fun insertMemo(memoInfo : MemoInfo)
 
     @Delete
-    fun delete(memoInfo : MemoInfo)
+    fun deleteMemo(memoInfo : MemoInfo)
 
     @Update
-    fun update(memoInfo: MemoInfo)
+    fun updateMemo(memoInfo: MemoInfo)
 
 }

@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.pingpong.memoadd.R
 import com.pingpong.memoadd.data.MemoInfo
@@ -49,13 +50,11 @@ public class editMemoFragment() : Fragment(), editMemoContract.View {
         if(contents!!.length == 0)
             contents = null
 
-        var memo : MemoInfo? = null
-        if(!(title == null && contents == null))
-            memo = presenter.checkMemo(title, contents)
+        presenter.addMemo(title, contents, activity!!)
 
-        if(memo != null)
-            presenter.addMemo(MemoInfoDB.getInstance(context!!)!!.getMemoInfoDao(), memo)
+    }
 
-
+    override fun showToast(contents : String) {
+        Toast.makeText(context, contents,Toast.LENGTH_LONG).show()
     }
 }

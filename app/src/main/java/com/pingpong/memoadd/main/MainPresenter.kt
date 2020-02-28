@@ -11,17 +11,14 @@ class MainPresenter() : MainContract.Presenter {
 
 
     override fun loadMemoFromLocal(context: Context) {
-//        val memoInfoDao : MemoInfoDao? = MemoInfoDB.getInstance(context)!!.getMemoInfoDao()
-
+        val memoInfoDao : MemoInfoDao? = MemoInfoDB.getInstance(context)!!.getMemoInfoDao()
         val r = Runnable {
-            val memoInfoDB = MemoInfoDB.getInstance(context)
-//            val memoList = memoInfoDao!!.getAll()
+            val memoList = memoInfoDao!!.getAllMemos()
 
-//            view.updateMemos(memoList)
+            view.updateMemos(memoList)
         }
 
         val thread = Thread(r)
-
         thread.start()
     }
 
