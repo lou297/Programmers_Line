@@ -1,15 +1,18 @@
 package com.pingpong.memoadd.data
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 @Entity(tableName = "memo")
 class MemoInfo(@PrimaryKey (autoGenerate = true) val id : Int,
                @ColumnInfo(name = "title") var title : String?,
                @ColumnInfo(name = "contents") var contents : String?,
                @ColumnInfo(name = "image_num") var imageNum : Int,
-               @ColumnInfo(name = "first_image_path") var firstImagePath : String?)
+               @ColumnInfo(name = "first_image_path") var firstImagePath : String?) : Parcelable
 
 /*
  key : DB indexing을 위한 key

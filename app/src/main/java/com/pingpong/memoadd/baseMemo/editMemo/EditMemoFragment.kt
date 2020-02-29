@@ -1,23 +1,20 @@
 package com.pingpong.memoadd.baseMemo.editMemo
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.pingpong.memoadd.R
-import com.pingpong.memoadd.data.MemoInfo
-import com.pingpong.memoadd.data.MemoInfoDB
+import com.pingpong.memoadd.baseMemo.editMemo.EditMemoContract
+import com.pingpong.memoadd.baseMemo.editMemo.EditMemoPresenter
 import kotlinx.android.synthetic.main.fragment_edit_memo.*
-import kotlinx.android.synthetic.main.fragment_edit_memo.btn_exit_memo
 import kotlinx.android.synthetic.main.fragment_edit_memo.view.*
-import kotlinx.android.synthetic.main.fragment_read_memo.*
 
-public class editMemoFragment() : Fragment(), editMemoContract.View {
+public class EditMemoFragment() : Fragment(), EditMemoContract.View {
 
-    private lateinit var presenter: editMemoPresenter
+    private lateinit var presenter: EditMemoPresenter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,8 +27,8 @@ public class editMemoFragment() : Fragment(), editMemoContract.View {
     }
 
     override fun init(v : View) {
-        presenter = editMemoPresenter().apply {
-            view = this@editMemoFragment
+        presenter = EditMemoPresenter().apply {
+            view = this@EditMemoFragment
         }
 
         v.btn_save_memo.setOnClickListener {

@@ -1,14 +1,13 @@
 package com.pingpong.memoadd.baseMemo.editMemo
 
 import android.app.Activity
-import android.content.Context
+import com.pingpong.memoadd.baseMemo.editMemo.EditMemoContract
 import com.pingpong.memoadd.data.MemoInfo
 import com.pingpong.memoadd.data.MemoInfoDB
-import com.pingpong.memoadd.data.MemoInfoDao
 
-class editMemoPresenter() : editMemoContract.Presenter {
+class EditMemoPresenter() : EditMemoContract.Presenter {
 
-    lateinit override var view: editMemoContract.View
+    lateinit override var view: EditMemoContract.View
 
     override fun addMemo(title: String?, contents : String?, activity: Activity) {
         if(title == null && contents == null) {

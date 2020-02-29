@@ -1,11 +1,8 @@
 package com.pingpong.memoadd.baseMemo.editMemo
 
 import android.app.Activity
-import android.content.Context
-import com.pingpong.memoadd.data.MemoInfo
-import com.pingpong.memoadd.data.MemoInfoDao
 
-interface editMemoContract {
+interface EditMemoContract {
 
     interface View {
         fun init(view : android.view.View)
