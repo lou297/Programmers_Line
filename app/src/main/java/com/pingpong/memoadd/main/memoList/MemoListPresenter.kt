@@ -23,7 +23,7 @@ class MemoListPresenter : MemoListContract.Presenter{
     }
 
     override fun addMemos(memos: List<MemoInfo>) {
-        for(memo in memoList)
+        for(memo in memos)
             memoList.add(memo)
     }
 
