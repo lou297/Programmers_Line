@@ -43,8 +43,7 @@ public class ReadMemoFragment : Fragment(), ReadMemoContract.View {
         presenter = ReadMemoPresenter().apply {
             view = this@ReadMemoFragment
         }
-
-        presenter.loadIntent(mActivity!!.intent)
+        presenter.loadBundle(arguments)
 
     }
 
