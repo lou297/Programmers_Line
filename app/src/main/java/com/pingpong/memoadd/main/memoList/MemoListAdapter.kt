@@ -32,6 +32,10 @@ class MemoListAdapter() : RecyclerView.Adapter<MemoListAdapter.MemoViewHolder>()
     inner class MemoViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView),
         MemoListContract.View {
 
+        override fun setClickListener(listener: OnMemoItemClickListener) {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
         override fun setTitle(title: String) {
             itemView.tv_memo_list_title.text = title
         }

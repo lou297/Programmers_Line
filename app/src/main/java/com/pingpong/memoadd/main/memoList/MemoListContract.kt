@@ -4,6 +4,8 @@ import com.pingpong.memoadd.data.MemoInfo
 
 interface MemoListContract {
     interface View {
+        fun setClickListener(listener : OnMemoItemClickListener)
+
         fun setTitle(title : String)
 
         fun setContents(contents : String)

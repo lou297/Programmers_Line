@@ -13,7 +13,7 @@ class ReadMemoPresenter : ReadMemoContract.Presenter {
         var memo :MemoInfo? = null
 
         if(bundle != null)
-            memo = bundle.getParcelable<MemoInfo>("loadMemo")
+            memo = bundle.getParcelable<MemoInfo>("LOAD_MEMO")
 
         if(memo != null)
             view.showSavedMemo(memo)
