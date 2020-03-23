@@ -15,11 +15,11 @@ class MemoListPresenter : MemoListContract.Presenter{
         val contents = memo.contents
         val thumbnail = memo.firstImagePath
 
-        if(title != null)
-            holder.setTitle(title)
+//        if(title != null)
+//            holder.setTitle(title)
 
-        if(contents != null)
-            holder.setContents(contents)
+//        if(contents != null)
+//            holder.setContents(contents)
     }
 
     override fun addMemos(memos: List<MemoInfo>) {

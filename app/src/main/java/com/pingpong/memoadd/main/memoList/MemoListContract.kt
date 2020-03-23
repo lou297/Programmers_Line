@@ -4,13 +4,21 @@ import com.pingpong.memoadd.data.MemoInfo
 
 interface MemoListContract {
     interface View {
-        fun setClickListener(listener : OnMemoItemClickListener)
+//        fun setClickListener(listener : OnMemoItemClickListener)
+//
+//        fun setTitle(title : String)
+//
+//        fun setContents(contents : String)
+//
+//        fun setThumbNail(url : String)
 
-        fun setTitle(title : String)
+        fun notifyAdapter()
+    }
 
-        fun setContents(contents : String)
+    interface Model {
+        fun addItems(memos: ArrayList<MemoInfo>);
 
-        fun setThumbNail(url : String)
+        fun clearItems();
     }
 
     interface Presenter {

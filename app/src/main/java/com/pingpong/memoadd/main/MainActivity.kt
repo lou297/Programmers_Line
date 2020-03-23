@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity(),  MainContract.View {
 
     private lateinit var presenter: MainPresenter
 
-    private val adapter = MemoListAdapter()
+    private val adapter = MemoListAdapter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +32,8 @@ class MainActivity : AppCompatActivity(),  MainContract.View {
     override fun init() {
         presenter = MainPresenter().apply {
             view = this@MainActivity
+            memoAdapterView = adapter;
+            memoAdapterModel = adapter;
         }
 
         rv_memo_list.layoutManager = LinearLayoutManager(this) as RecyclerView.LayoutManager?
@@ -43,11 +45,6 @@ class MainActivity : AppCompatActivity(),  MainContract.View {
             val intent = Intent(this, BaseMemoActivity::class.java)
             startActivity(intent)
         }
-    }
-
-    override fun updateMemos(memoList: List<MemoInfo>) {
-        adapter.addMemos(memoList)
-        adapter.notifyDataSetChanged()
     }
 
     override fun showToast(contents: String) {
