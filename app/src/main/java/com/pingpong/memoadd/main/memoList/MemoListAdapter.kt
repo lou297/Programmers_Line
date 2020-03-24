@@ -14,7 +14,6 @@ class MemoListAdapter(val context: Context) : RecyclerView.Adapter<MemoListAdapt
 
     private lateinit var memos : ArrayList<MemoInfo>
 
-    private val presenter = MemoListPresenter()
 
     override fun notifyAdapter() {
         notifyDataSetChanged();
@@ -33,30 +32,20 @@ class MemoListAdapter(val context: Context) : RecyclerView.Adapter<MemoListAdapt
     }
 
     override fun getItemCount(): Int {
-        return presenter.getListSize()
+        return memos.size
     }
 
     override fun onBindViewHolder(holder: MemoViewHolder, position: Int) {
-        return presenter.onBindViewApPosition(position, holder)
+        return holder.onBind(memos.get(position), position);
     }
 
     inner class MemoViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
 
-//        override fun setClickListener(listener: OnMemoItemClickListener) {
-//            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-//        }
-//
-//        override fun setTitle(title: String) {
-//            itemView.tv_memo_list_title.text = title
-//        }
-//
-//        override fun setContents(contents: String) {
-//            itemView.tv_memo_list_contents.text = contents
-//        }
-//
-//        override fun setThumbNail(url: String) {
-//            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-//        }
+
+        fun onBind(item : MemoInfo, position : Int) {
+            itemView.tv_memo_list_title.text = item.title;
+            itemView.tv_memo_list_contents.text = item.contents;
+        }
 
 
     }

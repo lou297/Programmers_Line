@@ -19,7 +19,7 @@ class MainPresenter() : MainContract.Presenter {
         val r = Runnable {
             val memoList = memoInfoDao!!.getAllMemos()
 
-            memoAdapterModel.addItems(memoList);
+            memoAdapterModel.addItems(ArrayList(memoList));
             memoAdapterView.notifyAdapter();
         }
 

@@ -3,16 +3,12 @@ package com.pingpong.memoadd.main
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.pingpong.memoadd.data.MemoInfo
 import com.pingpong.memoadd.R
 import com.pingpong.memoadd.baseMemo.BaseMemoActivity
-import com.pingpong.memoadd.data.MemoInfoDB
 import com.pingpong.memoadd.main.memoList.MemoListAdapter
-import com.pingpong.memoadd.main.memoList.MemoListPresenter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(),  MainContract.View {
